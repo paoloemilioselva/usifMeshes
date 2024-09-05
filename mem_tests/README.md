@@ -42,7 +42,7 @@ filling the whole grid basically)
 
 ![image](https://github.com/user-attachments/assets/3c6e1bbb-6221-427e-9f74-b621ef7116a4)
 
-The `renderstatsoverlay` products the following files, in order, for `small`, `large` and then `proc`.
+The `renderstatsoverlay` generates the following files, in order, for `small`, `large` and then `proc`.
 
 Small:
 ![image](https://github.com/user-attachments/assets/c7041b15-f93f-44f2-a6f4-f310ae8d98dd)
