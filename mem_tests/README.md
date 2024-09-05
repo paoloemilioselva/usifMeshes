@@ -1,12 +1,12 @@
 How to run the tests
 ====================
 
-After compiled the usifMeshes plugin and installed it for Houdini-20.5.xxx, 
-you can launch the Houdini commandline tool.
+After you've compiled the usifMeshes plugin and installed it for Houdini-20.5.xxx, 
+you can then launch the Houdini commandline tool.
 
 ![image](https://github.com/user-attachments/assets/48911066-8c2a-48f6-8cc0-e5fdc187bd51)
 
-The `cd` in the `mem_tests` folder and launch `hython mem_tests.py`.
+Then `cd` in the `mem_tests` folder and launch `hython mem_tests.py`.
 
 This will generate and run 3 renders in `husk` also generating stats via `renderstatsoverlay`.
 
