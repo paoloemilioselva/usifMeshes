@@ -34,9 +34,8 @@ def create_furrypatch_geo(mesh, sx, sy):
 
 tests = ["small", "large", "proc"]
 
-generate_files = False
-render_tests = False
-usd_memory_stats = True
+generate_files = True
+render_tests = True
 
 if generate_files:
     stage = Usd.Stage.CreateNew("./furrypatch_small_geo.usd")
@@ -132,26 +131,3 @@ if render_tests:
         #os.environ["PXR_WORK_THREAD_LIMIT"] = "1"
         os.system( f"husk -f 120 -c /camera_rig/mono -R Karma -o {output_filename} --usd-input {stage_filename}" )
         os.system( f'renderstatsoverlay --align "top left" --overlay {output_filename} {output_stats_filename}' )
-
-if usd_memory_stats:
-    import psutil
-    bytes_to_gb = 1024.0 * 1024.0 * 1024.0
-    initial_avail = psutil.virtual_memory().available / bytes_to_gb
-    def mem_snapshot(text):
-        avail_gb = psutil.virtual_memory().available / bytes_to_gb
-        total_gb = psutil.virtual_memory().total / bytes_to_gb
-        curr_gb = initial_avail - avail_gb
-        print( f"[{text:<40} curr:{curr_gb:.02f}gb total:{total_gb:.02f}gb ]"  )
-
-    mem_snapshot("initial")
-    for test in tests:
-        stage_filename = f"./main_{test}.usda"
-        mem_snapshot(f"Loading {stage_filename}")
-        stage = Usd.Stage.Open(stage_filename)
-        polys = 0
-        meshes = 0
-        for prim in stage.Traverse():
-            if prim.GetTypeName() == "Mesh":
-                meshes += 1
-                polys += UsdGeom.Mesh(prim).GetFaceCount()
-        mem_snapshot(f" - meshes:{meshes} polys:{polys}")
