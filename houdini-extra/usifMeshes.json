@@ -1,0 +1,26 @@
+{
+  "hpath": "$HOUDINI_USER_PREF_DIR/usifMeshes",
+  "env": [
+    {
+      "USDIMAGINGGL_ENGINE_ENABLE_SCENE_INDEX": 1
+    },
+    {
+      "HD_ENABLE_SCENE_INDEX_EMULATION": "True"
+    },
+    {
+      "USDIMAGING_ENABLE_PLUGINS": "True"
+    },
+    {
+      "HDGP_INCLUDE_DEFAULT_RESOLVER": "True"
+    },
+    {
+      "PXR_PLUGINPATH_NAME": "$HOUDINI_USER_PREF_DIR/usifMeshes/dso/usd_plugins"
+    },
+    {
+      "PATH": "$HOUDINI_USER_PREF_DIR/usifMeshes/dso/usd_plugins"
+    },
+    {
+      "PYTHONPATH": "$HOUDINI_USER_PREF_DIR/usifMeshes/dso/usd_plugins"
+    }
+  ]
+}

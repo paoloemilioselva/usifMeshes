@@ -1,0 +1,21 @@
+{
+  "Plugins": [
+    {
+      "Info": {
+        "Types": {
+          "usifMeshesPlugin": {
+            "bases": [ "HdSceneIndexPlugin" ],
+            "loadWithRenderer": "",
+            "priority": 0,
+            "displayName": "usifMeshes SceneIndex filter plugin"
+          }
+        }
+      },
+      "LibraryPath": "../usifMeshes.dll",
+      "Name": "usifMeshes",
+      "Type": "library",
+      "ResourcePath": "resources",
+      "Root": ".."
+    }
+  ]
+}
