@@ -127,7 +127,7 @@ if render_tests:
     for test in tests:
         stage_filename = f"./main_{test}.usda"
         output_filename = f"./main_{test}.exr"
-        output_stats_filename = f"./main_{test}.stats.jpg"
+        output_stats_filename = f"./main_{test}.stats.png"
         #os.environ["PXR_WORK_THREAD_LIMIT"] = "1"
         os.system( f"husk -f 120 -c /camera_rig/mono -R Karma -o {output_filename} --usd-input {stage_filename}" )
-        os.system( f'renderstatsoverlay --align "top left" --overlay {output_filename} {output_stats_filename}' )
+        os.system( f'renderstatsoverlay --align "top left" --overlay --preserve-transparency --color-space="" {output_filename} {output_stats_filename}' )
